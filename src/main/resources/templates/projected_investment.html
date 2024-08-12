@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Projected Investment</title>
+</head>
+<body>
+<h2>Projected Investment</h2>
+<p><strong>Customer:</strong> <span th:text="${customer.name}"></span></p>
+<p><strong>Initial Deposit:</strong> <span th:text="${customer.initialDeposit}"></span></p>
+<p><strong>Number of Years:</strong> <span th:text="${customer.numberOfYears}"></span></p>
+<p><strong>Savings Type:</strong> <span th:text="${customer.savingsType}"></span></p>
+<p><strong>Projected Value:</strong> <span th:text="${projectedValue}"></span></p>
+<br/>
+<a th:href="@{/}">Back to Customer List</a>
+</body>
+</html>
+

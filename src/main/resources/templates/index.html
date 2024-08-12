@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Customer List</title>
+</head>
+<body>
+<h1>Customer List</h1>
+<table border="1">
+    <thead>
+    <tr>
+        <th>ID</th>
+        <th>Customer Number</th>
+        <th>Name</th>
+        <th>Initial Deposit</th>
+        <th>Number of Years</th>
+        <th>Savings Type</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="customer : ${listCustomers}">
+        <td th:text="${customer.id}"></td>
+        <td th:text="${customer.customerNumber}"></td>
+        <td th:text="${customer.name}"></td>
+        <td th:text="${customer.initialDeposit}"></td>
+        <td th:text="${customer.numberOfYears}"></td>
+        <td th:text="${customer.savingsType}"></td>
+        <td>
+            <a th:href="@{/showFormForUpdate/{id}(id=${customer.id})}">Edit</a> |
+            <a th:href="@{/deleteCustomer/{id}(id=${customer.id})}">Delete</a> |
+            <a th:href="@{/projectedInvestment/{id}(id=${customer.id})}">Projected Investment</a>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<br/>
+<a th:href="@{/showNewCustomerForm}">Add New Customer</a>
+</body>
+</html>
